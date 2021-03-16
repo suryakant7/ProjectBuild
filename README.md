@@ -1,2 +1,2 @@
 # ProjectBuild
-All progress and about project should written down here...
+keep track of daily activity with Scrum Board

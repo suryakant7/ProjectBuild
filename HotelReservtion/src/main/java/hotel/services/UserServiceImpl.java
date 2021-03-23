@@ -105,4 +105,10 @@ public class UserServiceImpl implements UserService {
 		return principal.toString();
 	}
 
+	@Override
+	public String getUserName() {
+		User user = userRepository.findByUsername(loggedUserEmail());
+		return user.getUsername();
+	}
+
 }

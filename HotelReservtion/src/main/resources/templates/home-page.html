@@ -56,8 +56,10 @@
 				data-friction-y="0.1" data-origin-x="0.5" data-origin-y="0.5">
 				<li class="layer name" data-depth="0.90">HOTEL RESERVATION</li>
 				<li class="layer title" data-depth="0.50">Book Online Now !</li>
-				<li class="layer btn btn-main" data-depth="0.30"><a
-					th:href="@{/new-reservation}" class="reservation-btn">New
+				
+				<li class="layer btn btn-main" data-depth="0.30">
+				
+				<a th:href="@{/new-reservation}" class="reservation-btn">New
 						Reservation</a> <a th:href="@{/your-reservations}"
 					class="reservations-btn">Your Reservations</a> <br> <a
 					th:href="@{/logout}" class="logout-btn">Sign Out</a></li>
@@ -67,6 +69,7 @@
 
 	<!--Room Cards Section -->
 	<section class="section-padding" id="work">
+		<h2 th:text = "${userName}" >Hello</h2>
 		<h2 class="sub-title">Hotel Rooms and Suites</h2>
 		<div class="container-rooms">
 			<div class="row-room">

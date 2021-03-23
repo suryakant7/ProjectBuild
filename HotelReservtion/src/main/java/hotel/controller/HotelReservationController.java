@@ -1,5 +1,7 @@
 	package hotel.controller;
 
+import java.util.Date;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
@@ -22,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import hotel.entity.User;
 import hotel.services.ReservationService;
 import hotel.services.UserService;
 import hotel.temp.CurrentReservation;
@@ -49,8 +52,11 @@ public class HotelReservationController {
 
 	// home page
 	@RequestMapping("/")
-	public String homePage() {
-
+	public String homePage(Model model) {
+		
+		//model.addAttribute("currDate", new Date().toLocaleString());
+		model.addAttribute("userName", userService.getUserName());
+		
 		return "home-page";
 	}
 

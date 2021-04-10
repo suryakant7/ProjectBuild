@@ -37,6 +37,11 @@
 						class="logo">
 					</a>
 				</div>
+				
+				<div style="font-weight: 600;color: floralwhite;">
+				Welcome <label><output class="display" 
+					id="display-username" th:text = "${userName}"></output></label> !
+				</div>
 
 				<!-- Menu bar -->
 				<ul class="menu">
@@ -69,7 +74,6 @@
 
 	<!--Room Cards Section -->
 	<section class="section-padding" id="work">
-		<h2 th:text = "${userName}" >Hello</h2>
 		<h2 class="sub-title">Hotel Rooms and Suites</h2>
 		<div class="container-rooms">
 			<div class="row-room">

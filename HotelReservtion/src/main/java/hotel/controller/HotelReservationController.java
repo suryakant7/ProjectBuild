@@ -1,7 +1,5 @@
 	package hotel.controller;
 
-import java.util.Date;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
@@ -100,6 +98,10 @@ public class HotelReservationController {
 	// booking page
 	@GetMapping("/new-reservation")
 	public String newReservation(Model model) {
+		
+		//printing current username
+		model.addAttribute("userName", userService.getUserName());
+		
 		// reservation attribute
 		model.addAttribute("newRes", new CurrentReservation());
 
@@ -121,6 +123,9 @@ public class HotelReservationController {
 	@GetMapping("/your-reservations")
 	public String reservationsList(Model model) {
 		
+		//printing current username
+		model.addAttribute("userName", userService.getUserName());
+		
 		// list of reservations for logged user
 		model.addAttribute("resList", reservationService.getReservationsForLoggedUser());
 
@@ -130,6 +135,9 @@ public class HotelReservationController {
 	// update reservation
 	@PostMapping("/reservation-update")
 	public String updateReservation(@RequestParam("resId") int resId, Model model) {
+		
+		//printing current username
+		model.addAttribute("userName", userService.getUserName());
 		
 		// new update reservation sent to services to store it in database
 		model.addAttribute("newRes", reservationService.reservationToCurrentReservationById(resId));

@@ -33,6 +33,11 @@
 					<a th:href="@{/}"> <img th:src="@{images/header/white-logo.png}" class="logo">
 					</a>
 				</div>
+				
+				<div style="font-weight: 700;color: floralwhite;">
+				Hi <label><output class="display" 
+					id="display-username"style="color: floralwhite;" th:text = "${userName}"></output></label> !
+				</div>
 
 				<!-- Menu bar -->
 				<ul class="menu">

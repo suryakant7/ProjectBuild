@@ -52,6 +52,7 @@ public class User {
 	}
 
 	public User(String userName, String password, String email, Collection<Role> roles, Collection<Reservation> reservations) {
+		System.out.println("Suryalk");
 		this.username = userName;
 		this.password = password;
 		this.email = email;

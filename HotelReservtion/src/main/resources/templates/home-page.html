@@ -37,6 +37,11 @@
 						class="logo">
 					</a>
 				</div>
+				
+				<div style="font-weight: 600;color: floralwhite;">
+				Welcome <label><output class="display" 
+					id="display-username" th:text = "${userName}"></output></label> !
+				</div>
 
 
 
@@ -67,8 +72,10 @@
 				data-friction-y="0.1" data-origin-x="0.5" data-origin-y="0.5">
 				<li class="layer name" data-depth="0.90">HOTEL RESERVATION</li>
 				<li class="layer title" data-depth="0.50">Book Online Now !</li>
-				<li class="layer btn btn-main" data-depth="0.30"><a
-					th:href="@{/new-reservation}" class="reservation-btn">New
+				
+				<li class="layer btn btn-main" data-depth="0.30">
+				
+				<a th:href="@{/new-reservation}" class="reservation-btn">New
 						Reservation</a> <a th:href="@{/your-reservations}"
 					class="reservations-btn">Your Reservations</a> <br> <a
 					th:href="@{/logout}" class="logout-btn">Sign Out</a></li>

@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import hotel.entity.User;
 import hotel.services.ReservationService;
 import hotel.services.UserService;
 import hotel.temp.CurrentReservation;
@@ -49,8 +50,11 @@ public class HotelReservationController {
 
 	// home page
 	@RequestMapping("/")
-	public String homePage() {
-
+	public String homePage(Model model) {
+		
+		//model.addAttribute("currDate", new Date().toLocaleString());
+		model.addAttribute("userName", userService.getUserName());
+		
 		return "home-page";
 	}
 
@@ -94,6 +98,10 @@ public class HotelReservationController {
 	// booking page
 	@GetMapping("/new-reservation")
 	public String newReservation(Model model) {
+		
+		//printing current username
+		model.addAttribute("userName", userService.getUserName());
+		
 		// reservation attribute
 		model.addAttribute("newRes", new CurrentReservation());
 
@@ -115,6 +123,9 @@ public class HotelReservationController {
 	@GetMapping("/your-reservations")
 	public String reservationsList(Model model) {
 		
+		//printing current username
+		model.addAttribute("userName", userService.getUserName());
+		
 		// list of reservations for logged user
 		model.addAttribute("resList", reservationService.getReservationsForLoggedUser());
 
@@ -124,6 +135,9 @@ public class HotelReservationController {
 	// update reservation
 	@PostMapping("/reservation-update")
 	public String updateReservation(@RequestParam("resId") int resId, Model model) {
+		
+		//printing current username
+		model.addAttribute("userName", userService.getUserName());
 		
 		// new update reservation sent to services to store it in database
 		model.addAttribute("newRes", reservationService.reservationToCurrentReservationById(resId));

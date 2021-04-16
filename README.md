@@ -62,3 +62,73 @@ ii.	Hotel Reservation is a web based project. In the website you can signup and 
   
 ![8 Your Reservation](https://user-images.githubusercontent.com/78878627/114337985-c2fd7e00-9b6f-11eb-8ffa-9f7942ec97f8.jpg)
 
+
+## Coading Part!!!
+
+* Maven Build Tool : For managing the file structure
+
+![1 maven build tool](https://user-images.githubusercontent.com/78878627/115064995-36561580-9f0b-11eb-8845-97e8a017cea4.jpg)
+
+
+
+* Data Access Object Pattern (DAO):
+
+It’s a pattern that use to deal with retrieve data from database and to save data too. Example: Reservation Dao Implementation Class.
+
+![4 dao](https://user-images.githubusercontent.com/78878627/115065023-4110aa80-9f0b-11eb-8aad-a648765c18df.jpg)
+
+
+
+* Service Pattern:
+
+It’s a pattern used between DAO and Controller that’s modify data, manage the service inventory, manage transactional and control all database layers to handle requests between server and client. Example: Reservation Service Implementation Class.
+
+![5 service](https://user-images.githubusercontent.com/78878627/115065035-466df500-9f0b-11eb-8b88-c6bfaf82ff8b.jpg)
+
+
+
+* Entity Package:
+
+It’s the Java POJOs classes that represents a stored table in database, entity annotation scan it so can connect with entity manager (JPA) in DAO pattern. Example: Reservation (Entity Class).
+
+![6 entity pkg](https://user-images.githubusercontent.com/78878627/115065100-5b4a8880-9f0b-11eb-9528-177e7a822ec6.jpg)
+
+
+
+* Temporary Package:
+
+This package for handle data input and match client inputs with required data, save data temporary in this class and after checking it using service pattern we pass it to entity classes. Example: Current Reservation Class.
+
+![7 temp](https://user-images.githubusercontent.com/78878627/115067467-9a2e0d80-9f0e-11eb-8fa6-3c1ca4f62e0e.jpg)
+
+
+
+* Validation Package:
+
+It’s some custom annotations with custom pattern regex or custom feature required to match data input with required data in Temporary Package. Example: Field Match Annotation.
+
+![8 valadation](https://user-images.githubusercontent.com/78878627/115065124-61d90000-9f0b-11eb-9083-f3337378a356.jpg)
+
+
+
+Controller Package:
+
+Controller is a Model View Controller (MVC) that’s handle the developing of user interfaces. Example: Hotel Reservation Controller Class.
+
+![9 controller](https://user-images.githubusercontent.com/78878627/115065142-669db400-9f0b-11eb-90f1-57c6b6fb3d8b.jpg)
+
+
+
+* Security Package:
+
+It’s a Spring Security class that handle the authentications and authorizations of the project and manage client and his role. Manage login and logout operations and all security features. Example: Security Config Class.
+
+![10 security](https://user-images.githubusercontent.com/78878627/115065160-6bfafe80-9f0b-11eb-8cb1-b93c5f1b0013.jpg)
+
+
+
+
+
+
+
+
